@@ -12,6 +12,7 @@ class LinkList {
     this.tail = null;
   }
 
+  // Big O Notation = O(1)
   addNodeAtHead(value) {
     let node = new Node(value, this.head, null);
     if (!this.head) {
@@ -22,6 +23,7 @@ class LinkList {
     this.head = node;
   }
 
+  // Big O Notation = O(1)
   addNodeAtTail(value) {
     let node = new Node(value, null, this.tail);
     if (this.tail) {
@@ -32,6 +34,7 @@ class LinkList {
     this.tail = node;
   }
 
+  // Big O Notation = O(1)
   removeFromHead() {
     let value = null;
     if (this.head) {
@@ -46,6 +49,7 @@ class LinkList {
     return value;
   }
 
+  // Big O Notation = O(1)
   removeFromTail() {
     let value = null;
     if (this.tail) {
@@ -60,6 +64,7 @@ class LinkList {
     return value;
   }
 
+  // Big O Notation = O(n)
   searchNode(searchValue) {
     let currentNode = this.head;
     while (currentNode) {
@@ -72,6 +77,7 @@ class LinkList {
     return null;
   }
 
+  // Big O Notation = O(n)
   indexOf(searchValue) {
     let currentNode = this.head,
       indexArray = [],
