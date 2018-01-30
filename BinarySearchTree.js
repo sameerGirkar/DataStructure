@@ -61,4 +61,20 @@ class BINARY_SEARCH_TREE {
       iterator(currentNode.value);
     }
   }
+
+  minValue() {
+    if (this.left) {
+      return this.left.minValue();
+    } else {
+      return this.value;
+    }
+  }
+
+  maxValue() {
+    if (this.right) {
+      return this.right.maxValue();
+    } else {
+      return this.value;
+    }
+  }
 }
