@@ -39,13 +39,26 @@ class BINARY_SEARCH_TREE {
     }
   }
 
-  depthFirsrTraversal(iterator) {
+  depthFirsrTraversal(iterator, order = 'in-order') {
+    (order === 'pre-order') ? iterator(this.value) : null;
     if (this.left) {
-      this.left.depthFirsrTraversal(iterator);
+      this.left.depthFirsrTraversal(iterator, order);
     }
-    iterator(this.value);
+    (order === 'in-order') ? iterator(this.value) : null;
     if (this.right) {
-      this.right.depthFirsrTraversal(iterator);
+      this.right.depthFirsrTraversal(iterator, order);
+    }
+    (order === 'post-order') ? iterator(this.value) : null;
+  }
+
+  breadthFirstSearch(iterator) {
+    let queue = [this],
+      currentNode = null;
+    while (queue.length > 0) {
+      currentNode = queue.shift();
+      (currentNode.left) ? queue.push(currentNode.left) : null;
+      (currentNode.right) ? queue.push(currentNode.right) : null;
+      iterator(currentNode.value);
     }
   }
 }
