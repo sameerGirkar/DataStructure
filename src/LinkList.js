@@ -92,5 +92,3 @@ class LinkList {
     return indexArray;
   }
 }
-
-export default LinkList;

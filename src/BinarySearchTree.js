@@ -77,4 +77,18 @@ class BINARY_SEARCH_TREE {
       return this.value;
     }
   }
+
+  countLeafNode() {
+    if (!this.left && !this.right) {
+      return 1;
+    } else {
+      if(this.left && !this.right) {
+        return this.left.countLeafNode();
+      } else if (!this.left && this.right) {
+        return this.right.countLeafNode();
+      } else {
+        return this.left.countLeafNode() + this.right.countLeafNode();
+      }
+    }
+  }
 }
